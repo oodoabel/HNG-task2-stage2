@@ -1,31 +1,37 @@
 import React from 'react'
+import { useState } from 'react';
 
 
-const colorArray = ['white', 'green', 'black', 'yellow', 'red', 'blue'];
+const colorArray = ['purple', 'green', 'pink', 'yellow', 'red', 'blue'];
 
-const colorDisplay = (color) => {
-  let random = colorArray[Math.floor(Math.random() * 6)] ;
-  console.log(random, color)
+const random = colorArray[Math.floor(Math.random() * 6)]
+console.log(random)
+
+
+const colorDisplay = (color, random) => {
+
+  console.log(color, random)
+
   if (color === random){
     console.log('u win')
   }else{
     console.log('try again');
   }
-  
 }
 
-const App = () => {
 
-  const colorArray = ['red', 'pink', 'green', 'yellow', 'purple', 'blue'];
+const App = () => {
+  
+  const [color, setColor] = useState(false);
 
   return (
     <div className='body'>
       <p className='welcome'>Welcome to the Game</p>
-      <p data-testid="colorBox">Guess the correct color</p>
-      <div>
-        correct color box
+      <p>Guess the correct color</p>
+      <div data-testid="colorBox">
+        {random}
       </div>
-      <div color>
+      <div>
         <button className='red' data-testid="red" onClick={() => {colorDisplay('red')}}>Red</button>
         <button className='blue' data-testid="blue" onClick={() => {colorDisplay('blue')}}>Red</button>
         <button className='green' data-testid="green" onClick={() => {colorDisplay('green')}}>Red</button>
