@@ -1,0 +1,60 @@
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: #008080;
+  color: white;
+}
+
+.body{
+  display: flex;
+  flex-direction: column;
+  color: #EEEEEE;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome{
+  color: #FFA500;
+  font-size: 3rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+:root {
+  --red: #e63946;
+  --blue: #0077b6;
+  --green: #2a9d8f;
+  --yellow: #f4a261;
+  --purple: #6a0572;
+  --pink: #ff477e;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.red { background: linear-gradient(135deg, var(--red), #ff6b6b); }
+.blue { background: linear-gradient(135deg, var(--blue), #00b4d8); }
+.green { background: linear-gradient(135deg, var(--green), #34d399); }
+.yellow { background: linear-gradient(135deg, var(--yellow), #ffbe76); }
+.purple { background: linear-gradient(135deg, var(--purple), #b565a7); }
+.pink { background: linear-gradient(135deg, var(--pink), #ff85a2); }
+
+.red:hover { background: linear-gradient(135deg, #ff6b6b, var(--red)); }
+.blue:hover { background: linear-gradient(135deg, #00b4d8, var(--blue)); }
+.green:hover { background: linear-gradient(135deg, #34d399, var(--green)); }
+.yellow:hover { background: linear-gradient(135deg, #ffbe76, var(--yellow)); }
+.purple:hover { background: linear-gradient(135deg, #b565a7, var(--purple)); }
+.pink:hover { background: linear-gradient(135deg, #ff85a2, var(--pink)); }
+
+
