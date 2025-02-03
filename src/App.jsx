@@ -1,48 +1,41 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useState } from 'react'
 
-
-const colorArray = ['purple', 'green', 'pink', 'yellow', 'red', 'blue'];
-
-const random = colorArray[Math.floor(Math.random() * 6)]
-console.log(random)
-
-
-const colorDisplay = (color, random) => {
-
-  console.log(color, random)
-
-  if (color === random){
-    console.log('u win')
-  }else{
-    console.log('try again');
-  }
-}
 
 
 const App = () => {
   
-  const [color, setColor] = useState(false);
+  const colorArray = ['pink', 'purple', 'green', 'yellow', 'blue', 'red']
+  const [displayColor, setDisplayColor] = useState(colorArray[(Math.floor(Math.random() * 6))])
+  const [gameScore, setGameScore] = useState(0);
+  let score = 0;
 
+  const check = (prop) => {
+    if(prop === displayColor){
+      setGameScore('Correct 👍');
+      score = score + 1;
+    }else{
+      setGameScore('Incorrect 👎')
+    }
+  }
   return (
+    
     <div className='body'>
-      <p className='welcome'>Welcome to the Game</p>
-      <p>Guess the correct color</p>
-      <div data-testid="colorBox">
-        {random}
+      <div id='display' data-testid="colorBox" className={displayColor}>
+        
       </div>
       <div>
-        <button className='red' data-testid="red" onClick={() => {colorDisplay('red')}}>Red</button>
-        <button className='blue' data-testid="blue" onClick={() => {colorDisplay('blue')}}>Red</button>
-        <button className='green' data-testid="green" onClick={() => {colorDisplay('green')}}>Red</button>
-        <button className='purple' data-testid="purple" onClick={() => {colorDisplay('purple')}}>Red</button>
-        <button className='pink' data-testid="pink" onClick={() => {colorDisplay('pink')}}>Red</button>
-        <button className='yellow' data-testid="yellow" onClick={() => {colorDisplay('yellow')}}>Red</button>
+        <button data-testid="blue" className='blue' onClick={() => {check('blue')}}></button>
+        <button data-testid="red" className='red' onClick={() => {check('red')}}></button>
+        <button data-testid="green" className='green' onClick={() => {check('green')}}></button> <br />
+        <button data-testid="yellow" className='yellow' onClick={() => {check('yellow')}}></button>
+        <button data-testid="pink" className='pink' onClick={() => {check('pink')}}></button>
+        <button data-testid="purple" className='purple' onClick={() => {check('purple')}}></button>
       </div>
-      <div>
-        <p>Score</p>
-        <h3>'Correct gueses ${} : ${} Wrong gueses'</h3>
-      </div>
+      <p className='welcome' data-testid="gameInstructions">Guess a color</p>
+      <p data-testid="gameStatus" className={gameScore === 'Correct' ? 'Correct 👍' : 'Incorrect 👎'}>{gameScore || null}</p>
+      <p className='score' data-testid="score">Score: {score}</p>
+      <button className='reset' data-testid="newGameButton">Reset</button>
+
     </div>
   )
 }
