@@ -15,10 +15,16 @@ const App = () => {
     setScore(0)
   }
 
+  const shuffle = () => {
+    setDisplayColor(colorArray[Math.floor(Math.random() * 6)])
+  }
+
+
   const check = (prop) => {
     if(prop === displayColor){
       setGameScore('Correct');
-      setScore(score += 1)
+      setScore(score += 1);
+      shuffle()
     }else{
       setGameScore('Incorrect')
     }
