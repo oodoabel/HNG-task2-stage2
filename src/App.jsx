@@ -50,7 +50,7 @@ const App = () => {
       </div>
       <p data-testid="gameStatus" className={gameScore === 'Correct'? 'Correct' : 'Incorrect'}>{gameScore || null}</p>
       <p className='score' data-testid="score">Score: {score || null}</p>
-      <button className='reset' data-testid="newGameButton" onClick={resetGame}>Reset</button>
+      <button className='reset' data-testid="newGameButton" onClick={resetGame}>New Game</button>
 
     </div>
     </div>
