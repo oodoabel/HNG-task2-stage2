@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 
 
@@ -8,6 +8,12 @@ const App = () => {
   const [displayColor, setDisplayColor] = useState(colorArray[(Math.floor(Math.random() * 6))])
   const [gameScore, setGameScore] = useState(0);
   let [ score, setScore ] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setGameScore(null)
+    }, 1500);
+  },[gameScore] )
 
   const resetGame = () => {
     setDisplayColor(colorArray[Math.floor(Math.random() * 6)])
@@ -49,7 +55,9 @@ const App = () => {
         <button data-testid="pink" className='pink' onClick={() => {check('pink')}}></button>
         <button data-testid="purple" className='purple' onClick={() => {check('purple')}}></button>
       </div>
+      <div className='result-div'>
       <p data-testid="gameStatus" className={gameScore === 'Correct'? 'Correct' : 'Incorrect'}>{gameScore || null}</p>
+      </div>
       <p className='score' data-testid="score">Score: {score || null}</p>
       <button className='reset' data-testid="newGameButton" onClick={resetGame}>New Game</button>
 

@@ -49,10 +49,10 @@ body{
 
 @keyframes fadeOut {
   from {
-    opacity: 1;
+    opacity: 0;
   }
   to {
-    opacity: 0;
+    opacity: 1;
   }
 }
 
@@ -72,7 +72,10 @@ body{
   color: red;
   margin: 5px;
   padding: 0px;
-  animation: fadeOut 3s;
+  animation: fadeOut 2s;
+}
+.result-div{
+  height: 2rem;
 }
 .welcome{
   color: #FFA500;
