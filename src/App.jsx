@@ -56,10 +56,11 @@ const App = () => {
         <button data-testid="purple" className='purple' onClick={() => {check('purple')}}></button>
       </div>
       <div className='result-div'>
-      <p data-testid="gameStatus" className={gameScore === 'Correct'? 'Correct' : 'Incorrect'}>{gameScore || null}</p>
+      <p data-testid="gameStatus" className={gameScore === 'Correct'? 'correct' : 'incorrect'}>{gameScore || null}</p>
       </div>
       <p className='score' data-testid="score">Score: {score || null}</p>
       <button className='reset' data-testid="newGameButton" onClick={resetGame}>New Game</button>
+      {/* <div className='div'>div</div> */}
 
     </div>
     </div>

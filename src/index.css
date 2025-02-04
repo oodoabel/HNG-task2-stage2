@@ -23,6 +23,7 @@ body{
   width: 20rem;
   height: 2.5rem;
   padding: 0px;
+  animation: opacity 3s;
 }
 
 .score{
@@ -38,9 +39,8 @@ body{
  box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.2);
 }
 
-.Correct{
+.correct{
   color: green;
-  animation: pulse 1s;
   margin: 5px;
   padding: 0px;
   animation: pulse 3s;
@@ -58,7 +58,13 @@ body{
   }
 }
 
-.Incorrect{
+.div{
+  background-color: blue;
+  height: 5rem;
+  width: 20rem;
+  animation: opacity 3s;
+}
+.incorrect{
   color: red;
   margin: 5px;
   padding: 0px;
