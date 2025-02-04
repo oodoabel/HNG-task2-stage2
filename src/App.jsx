@@ -26,7 +26,8 @@ const App = () => {
       setScore(score += 1);
       shuffle()
     }else{
-      setGameScore('Incorrect')
+      setGameScore('Incorrect')      
+      shuffle()
     }
   }
   return (
