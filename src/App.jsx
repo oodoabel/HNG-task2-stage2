@@ -33,8 +33,8 @@ const App = () => {
     
     <div className='cont-div'>
       <div className='body'>
-      <p className='welcome'>You are welcome to play!</p>
-      <p className='welcome' data-testid="gameInstructions">Guess a color</p>
+      <p className='welcomee'>You're welcome to play!</p>
+      <p className='welcome' data-testid="gameInstructions">Guess the correct color</p>
 
 
       <div id='display' data-testid="colorBox" className={displayColor}>
